@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
   <title>@yield('title')</title>
   <!--meta tags -->
@@ -8,7 +9,7 @@
   <meta name="keywords" content="Adventure Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
   <script>
-    addEventListener("load", function () {
+    addEventListener("load", function() {
       setTimeout(hideURLbar, 0);
     }, false);
 
@@ -18,13 +19,13 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
     }
   </script>
   <!--booststrap-->
-  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" media="all">
   <!--//booststrap end-->
   <!-- font-awesome icons -->
-  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
   <!-- //font-awesome icons -->
   <!--stylesheets-->
-  <link href="css/style.css" rel='stylesheet' type='text/css' media="all">
+  <link href="{{ asset('css/style.css') }}" rel='stylesheet' type='text/css' media="all">
   <!--//stylesheets-->
   <link href="//fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link href="//fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
@@ -57,21 +58,20 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
             <a href="{{ url('/artikel')}}">Artikel</a>
           </li>
           <li>
-          @if(auth()->user())
-							<a href="{{ url('/profile')}}" class="btn btn-info btn-sm" >{{ auth()->user()->name }}</a>
-									<a href="{{ route('logout') }}" class="btn btn-danger btn-sm"
-										onclick="event.preventDefault();
+            @if(auth()->user())
+            <a href="{{ url('/profile')}}" class="btn btn-info btn-sm">{{ auth()->user()->name }}</a>
+            <a href="{{ route('logout') }}" class="btn btn-danger btn-sm" onclick="event.preventDefault();
 														document.getElementById('logout-form').submit();">
-											{{ __('Logout') }}
-										</a>
+              {{ __('Logout') }}
+            </a>
 
-										<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-											@csrf
-										</form></a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+            </form></a>
 
-					@else
+            @else
             <a href="{{ url('/login') }}" class="btn btn-outline-light" role="button">Login</a>
-					@endif
+            @endif
           </li>
         </ul>
       </nav>
@@ -92,9 +92,9 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
     </div>
   </div>
 
-@yield('content')
+  @yield('content')
 
-<section class="footer-w3layouts-bottem py-lg-4 py-md-3 py-sm-3 py-3">
+  <section class="footer-w3layouts-bottem py-lg-4 py-md-3 py-sm-3 py-3">
     <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
       <div class=" footer-top mt-3 text-center">
         <p>
@@ -144,4 +144,5 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
     </p>
   </footer>
   <!--//footer-copy-right -->
+
 </html>

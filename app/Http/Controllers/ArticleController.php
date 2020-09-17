@@ -53,7 +53,7 @@ class ArticleController extends Controller
             'deskripsi' => $request->deskripsi,
         ]);
 
-        return view('/tambahartikel');
+        return view('/artikel');
     }
 
     /**
