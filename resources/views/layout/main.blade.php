@@ -18,9 +18,15 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
       window.scrollTo(0, 1);
     }
   </script>
-  <!--booststrap-->
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" media="all">
-  <!--//booststrap end-->
+  <!-- ADDITIONAL -->
+  <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+  <link rel="stylesheet" href="{{asset('css/flaticon.css')}}">
+  <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
+  <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">
+  <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+  <link rel="stylesheet" href="{{asset('css/slick.css')}}">
+  <link rel="stylesheet" href="{{asset('css/themify-icons.css')}}">
+  <link href="{{ asset('css/bootstrap.min.css')}}">
   <!-- font-awesome icons -->
   <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
   <!-- //font-awesome icons -->
@@ -30,6 +36,11 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
   <link href="//fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link href="//fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
   <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+  <!--booststrap-->
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" media="all">
+  <!--//booststrap end-->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="{{ asset('js/app.js')}}"></script>
 </head>
 
 <body>
@@ -57,22 +68,29 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
           <li>
             <a href="{{ url('/artikel')}}">Artikel</a>
           </li>
-          <li>
-            @if(auth()->user())
-            <a href="{{ url('/profile')}}" class="btn btn-info btn-sm">{{ auth()->user()->name }}</a>
-            <a href="{{ route('logout') }}" class="btn btn-danger btn-sm" onclick="event.preventDefault();
-														document.getElementById('logout-form').submit();">
-              {{ __('Logout') }}
+          @if(auth()->user())
+          <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+              {{ Auth::user()->name }} <span class="caret"></span>
             </a>
 
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-              @csrf
-            </form></a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+              </a>
 
-            @else
-            <a href="{{ url('/login') }}" class="btn btn-outline-light" role="button">Login</a>
-            @endif
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+              </form>
+            </div>
           </li>
+          @else
+          <li>
+            <a href="{{ url('/login') }}" class="btn btn-outline-light" role="button">Login</a>
+          </li>
+          @endif
         </ul>
       </nav>
       <!-- //nav -->
@@ -144,5 +162,6 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
     </p>
   </footer>
   <!--//footer-copy-right -->
+</body>
 
 </html>

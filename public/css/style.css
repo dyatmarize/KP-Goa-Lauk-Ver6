@@ -4,6 +4,10 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+
+/*--ADDITIONAL--*/
+
+
 html,
 body {
 padding: 0;
@@ -204,7 +208,7 @@ nav ul li ul li:hover {
   -o-transition: 0.5s all;
   -ms-transition: 0.5s all;
 }
-/* Hide Dropdowns by Default
+/* Hide s by Default
 * and giving it a position of absolute */
 
 nav ul ul {
@@ -482,6 +486,10 @@ position:relative;
     font-size: 30px;
     color: #000;
     letter-spacing: 2px;
+}
+
+.dropdown-item:hover{
+    color: black;
 }
 /*--// banner-- */
 /*--about--*/
