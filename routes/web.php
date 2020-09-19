@@ -34,6 +34,11 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/gallery', function () {
+    return view('gallery');
+});
+
+
 Route::get('/artikel', 'ArticleController@index');
 Route::get('/tambahartikel', function () {
     return view('tambahartikel');
