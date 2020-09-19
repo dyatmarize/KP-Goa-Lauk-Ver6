@@ -1,6 +1,19 @@
 @extends('layout/main')
 
-@section('title', 'About')
+@section('title', 'Articles')
+
+@section('banner')
+<div class="main-banner">
+  <div class="container">
+    <div class="banner-position-main">
+
+      <div class="banner-right-txt">
+        <h4>Articles</h4>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection
 
 @section('content')
 <section class="service py-lg-4 py-md-4 py-sm-3 py-3" id="service">

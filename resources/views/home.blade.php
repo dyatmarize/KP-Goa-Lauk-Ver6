@@ -2,8 +2,21 @@
 
 @section('title', 'Wisata Goa Lauk')
 
+@section('banner')
+<div class="main-banner">
+  <div class="container">
+    <div class="banner-position-main">
+
+      <div class="banner-right-txt">
+        <h5 class="mb-sm-3 mb-2">Thrill & Joy</h5>
+        <h4>Adventure begins</h4>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection
+
 @section('content')
-<!-- //banner -->
 <!-- about -->
 <section class="about py-lg-4 py-md-4 py-sm-3 py-3" id="about">
   <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
@@ -129,25 +142,6 @@
   </div>
 </section>
 <!--//service -->
-<!-- some-text -->
-<section>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-6 p-0 text-information">
-      </div>
-      <div class="col-lg-6 position-relative left-grid-tour">
-        <div class="right-position-two">
-        </div>
-        <h2 class="mb-lg-4 mb-3">Your Special Tour Today</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et Lorem ipsum
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et Lorem
-          ipsum
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-<!--//some-text -->
 <!-- gallery -->
 <section class="gallery py-lg-4 py-md-3 py-sm-3 py-3" id="gallery">
   <div class="container py-lg-5 py-md-4 py-sm-4 py-3">

@@ -1,6 +1,6 @@
 @extends('layout/main')
 
-@section('title', 'About')
+@section('title', 'Your Article')
 
 @section('content')
 <section class="service py-lg-4 py-md-4 py-sm-3 py-3" id="service">

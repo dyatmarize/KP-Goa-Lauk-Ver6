@@ -63,7 +63,7 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
             <a href="/about">About</a>
           </li>
           <li>
-            <a href="#">Gallery</a>
+            <a href="/gallery">Gallery</a>
           </li>
           <li>
             <a href="{{ url('/artikel')}}">Artikel</a>
@@ -88,7 +88,7 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
           </li>
           @else
           <li>
-            <a href="{{ url('/login') }}" class="btn btn-outline-light" role="button">Login</a>
+            <a href="{{ url('/login') }}" role="button">Login</a>
           </li>
           @endif
         </ul>
@@ -97,17 +97,7 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
     </div>
     <!-- //header -->
     <!-- banner -->
-    <div class="main-banner">
-      <div class="container">
-        <div class="banner-position-main">
-
-          <div class="banner-right-txt">
-            <h5 class="mb-sm-3 mb-2">Thrill & Joy</h5>
-            <h4>Adventure begins</h4>
-          </div>
-        </div>
-      </div>
-    </div>
+    @yield('banner')
   </div>
 
   @yield('content')
