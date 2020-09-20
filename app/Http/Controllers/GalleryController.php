@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Gallery;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -14,6 +15,9 @@ class GalleryController extends Controller
     public function index()
     {
         //
+        $gallerys = Gallery::all();
+
+        return view('gallery')->with(compact('gallerys'));
     }
 
     /**
@@ -35,6 +39,15 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         //
+        $filename = uniqid() . '.' . $request->gambar->getClientOriginalExtension();
+        $request->gambar->move(storage_path('app\public\images'), $filename);
+
+        Gallery::create([
+            'id_user' => auth()->user()->id,
+            'file' => $filename,
+        ]);
+
+        return view('/uploadgallery');
     }
 
     /**

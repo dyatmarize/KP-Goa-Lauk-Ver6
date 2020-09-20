@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Gallery extends Model
 {
-    protected $table = 'gallerys'; 
+    protected $table = 'gallerys';
 
     protected $fillable = [
-        'judul', 'deskripsi', 'id_user',
+        'id_user', 'file'
     ];
 
     public function users()
     {
-    	return $this->belongsTo('App\User', 'id_user');
+        return $this->belongsTo('App\User', 'id_user');
     }
 }

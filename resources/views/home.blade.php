@@ -50,7 +50,7 @@
       <h6>Adventure Tour Type</h6>
     </div>
     <div class="row text-center">
-      <div class="col-lg-2 col-md-4 col-sm-6 my-3 booking-choose">
+      <!-- <div class="col-lg-2 col-md-4 col-sm-6 my-3 booking-choose">
         <div class="adventure-tour-wthree">
           <span class="fa fa-ship" aria-hidden="true"></span>
           <h4 class="mt-lg-3 mt-2">Cruises</h4>
@@ -61,8 +61,8 @@
           <span class="fa fa-shopping-bag" aria-hidden="true"></span>
           <h4 class="mt-lg-3 mt-2">Hiking</h4>
         </div>
-      </div>
-      <div class="col-lg-2 col-md-4 col-sm-6 my-3 booking-choose">
+      </div> -->
+      <div class="col-lg-2 col-md-4 col-sm-6 my-3 ml-3 booking-choose">
         <div class="adventure-tour-wthree">
           <span class="fa fa-sun-o" aria-hidden="true"></span>
           <h4 class="mt-lg-3 mt-2">Nature</h4>
@@ -100,7 +100,7 @@
     <div class="row">
       <div class="col-lg-4 col-md-6 col-sm-6 ser-icon my-3">
         <div class="grid-wthree-service">
-          <span class="fa fa-money" aria-hidden="true"></span>
+          <span class="fa fa-star" aria-hidden="true"></span>
           <div class="ser-text-wthree mt-3">
             <h4>
               Value
