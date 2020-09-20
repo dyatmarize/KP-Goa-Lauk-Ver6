@@ -17,13 +17,13 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $artikel = Article::paginate(10);
+        $artikel = Article::all();
     	return view('artikel')->with(compact('artikel'));
     }
 
     public function untukuser()
     {
-        $artikel = Auth::user()->artikel()->paginate(10);
+        $artikel = Auth::user()->artikel()->all();
     	return view('artikeluser')->with(compact('artikel'));
     }
 
@@ -53,7 +53,9 @@ class ArticleController extends Controller
             'deskripsi' => $request->deskripsi,
         ]);
 
-        return view('/artikel');
+        $artikel = Article::paginate(10);
+
+        return view('/artikel')->with(compact('artikel'));
     }
 
     /**

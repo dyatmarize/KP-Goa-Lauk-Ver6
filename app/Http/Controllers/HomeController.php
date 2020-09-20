@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+Use App\Article;
+Use App\User;
+use DB;
+Use App\About;
 
 class HomeController extends Controller
 {
@@ -23,6 +28,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $artikel = Article::paginate(3);
+        $about = About::paginate(1);
+        return view('home')->with(compact('artikel', 'about'));
     }
 }

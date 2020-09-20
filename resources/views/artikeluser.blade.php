@@ -13,7 +13,6 @@
       @foreach($artikel as $a)
       <div class="col-lg-4 col-md-6 col-sm-6 ser-icon my-3">
         <div class="grid-wthree-service">
-          <span class="fa fa-money" aria-hidden="true"></span>
           <div class="ser-text-wthree mt-3">
             <h4>
               {{ $a->judul }}

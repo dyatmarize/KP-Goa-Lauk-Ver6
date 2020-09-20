@@ -2,6 +2,13 @@
 
 @section('title', 'Wisata Goa Lauk')
 
+<style>
+p.ex3 {
+  height: 200px;
+  overflow: auto;
+}
+</style>
+
 @section('banner')
 <div class="main-banner">
   <div class="container">
@@ -17,6 +24,8 @@
 @endsection
 
 @section('content')
+
+
 <!-- about -->
 <section class="about py-lg-4 py-md-4 py-sm-3 py-3" id="about">
   <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
@@ -25,16 +34,18 @@
       <div class="col-lg-3 col-md-6 col-sm-6 abut-img-two my-3">
         <img src="images/wisata.jpg" alt="" class="img-fluid float-left">
       </div>
+      @foreach($about as $ab)
       <div class="col-lg-6 col-md-6 col-sm-6 left-abut-txt my-3">
         <h3 class="title mb-2">About Us</h3>
         <div class="title-w3ls-text mb-lg-4 mb-md-4 mb-sm-3 mb-3">
-          <h6>Some Words About Us
+          <h6>{{$ab->judul}}
           </h6>
         </div>
         <div class="about-right-grid">
-          <p>Goa Lauk kaya akan ornamen. Menurut cerita penduduk, dahulunya di goa ini terdapat banyak ikan, sehingga masyarakat menyebutnya goa ini dengan Goa Lauk.</p>
+          <p>{{$ab->deskripsi}}</p>
         </div>
       </div>
+      @endforeach
       <div class="col-lg-3 col-sm-6 abut-img-two my-3">
         <img src="images/goa.jpg" alt="" class="img-fluid float-right">
       </div>
@@ -62,28 +73,28 @@
           <h4 class="mt-lg-3 mt-2">Hiking</h4>
         </div>
       </div> -->
-      <div class="col-lg-2 col-md-4 col-sm-6 my-3 ml-3 booking-choose">
+      <div class="col-lg-3 col-md-4 col-sm-6 my-3 booking-choose">
         <div class="adventure-tour-wthree">
           <span class="fa fa-sun-o" aria-hidden="true"></span>
-          <h4 class="mt-lg-3 mt-2">Nature</h4>
+          <h4 class="mt-lg-3 mt-3">Nature</h4>
         </div>
       </div>
-      <div class="col-lg-2 col-md-4 col-sm-6 my-3 booking-choose">
+      <div class="col-lg-3 col-md-4 col-sm-6 my-3 booking-choose">
         <div class="adventure-tour-wthree">
           <span class="fa fa-fire" aria-hidden="true"></span>
-          <h4 class="mt-lg-3 mt-2">Fire Camp</h4>
+          <h4 class="mt-lg-3 mt-3">Fire Camp</h4>
         </div>
       </div>
-      <div class="col-lg-2 col-md-4 col-sm-6 my-3 booking-choose">
+      <div class="col-lg-3 col-md-4 col-sm-6 my-3 booking-choose">
         <div class="adventure-tour-wthree">
           <span class="fa fa-map" aria-hidden="true"></span>
-          <h4 class="mt-lg-3 mt-2">Explore</h4>
+          <h4 class="mt-lg-3 mt-3">Explore</h4>
         </div>
       </div>
-      <div class="col-lg-2 col-md-4 col-sm-6 my-3 booking-choose">
+      <div class="col-lg-3 col-md-4 col-sm-6 my-3 booking-choose">
         <div class="adventure-tour-wthree">
           <span class="fa fa-paper-plane-o" aria-hidden="true"></span>
-          <h4 class="mt-lg-3 mt-2">Fun</h4>
+          <h4 class="mt-lg-3 mt-3">Fun</h4>
         </div>
       </div>
     </div>
@@ -172,97 +183,25 @@
 </section>
 <!--//gallery -->
 <!-- blog -->
-<section class="blog" id="blog">
-  <div class="container-fluid">
+<section class="service py-lg-4 py-md-4 py-sm-3 py-3" id="service">
+  <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+
+    <h3 class="title text-center mb-2">Artikel</h3>
     <div class="row">
-      <div class="col-lg-6 col-md-6 blog-two-two p-0">
-        <div class="blog-wthree-list">
-          <div class="blog-date-time mb-2">
-            <ul>
-              <li>
-                <a href="#contact">July 2020/7</a>
-              </li>
-              <li>
-                <a href="#contact">Comments 5</a>
-              </li>
-            </ul>
-          </div>
-          <h4 class="mb-3">
-            <a href="#contact">Lorem ipsum dolor</a>
-          </h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Vestibulum nibh urna Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit.Vestibulum nibh urna</p>
-          <div class="view-buttn mt-md-4 mt-sm-4 mt-3">
-            <a href="#contact" class="btn">Read More</a>
+      @foreach($artikel as $a)
+      <div class="col-lg-4 col-md-6 col-sm-6 ser-icon my-3">
+        <div class="grid-wthree-service">
+          <span class="" aria-hidden="true"></span>
+          <div class="ser-text-wthree mt-3">
+            <h4>
+              {{ $a->judul }}
+            </h4>
+            <p class="mt-2 ex3">{{$a->deskripsi}}</p>
+            <h6 class="mt-2 float-right">Created by : {{$a->nama}}</h6>
           </div>
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 p-0 blog-img-one">
-        <div class="blog-wthree-list">
-          <div class="blog-date-time mb-2">
-            <ul>
-              <li>
-                <a href="#contact">July 2020/7</a>
-              </li>
-              <li>
-                <a href="#contact">Comments 5</a>
-              </li>
-            </ul>
-          </div>
-          <h4 class="mb-3">
-            <a href="#contact">Lorem ipsum dolor</a>
-          </h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Vestibulum nibh urna Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit.Vestibulum nibh urna</p>
-          <div class="view-buttn mt-md-4 mt-sm-4 mt-3">
-            <a href="#contact" class="btn">Read More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-6 p-0 blog-img-two">
-        <div class="blog-wthree-list">
-          <div class="blog-date-time mb-2">
-            <ul>
-              <li>
-                <a href="#contact">July 2020/7</a>
-              </li>
-              <li>
-                <a href="#contact">Comments 5</a>
-              </li>
-            </ul>
-          </div>
-          <h4 class="mb-3">
-            <a href="#contact">Lorem ipsum dolor</a>
-          </h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Vestibulum nibh urna Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit.Vestibulum nibh urna</p>
-          <div class="view-buttn mt-md-4 mt-sm-4 mt-3">
-            <a href="#contact" class="btn">Read More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-6 blog-two-two p-0">
-        <div class="blog-wthree-list">
-          <div class="blog-date-time mb-2">
-            <ul>
-              <li>
-                <a href="#contact">July 2020/7</a>
-              </li>
-              <li>
-                <a href="#contact">Comments 5</a>
-              </li>
-            </ul>
-          </div>
-          <h4 class="mb-3">
-            <a href="#contact">Lorem ipsum dolor</a>
-          </h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Vestibulum nibh urna Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit.Vestibulum nibh urna</p>
-          <div class="view-buttn mt-md-4 mt-sm-4 mt-3">
-            <a href="#contact" class="btn">Read More</a>
-          </div>
-        </div>
-      </div>
+      @endforeach
     </div>
   </div>
 </section>
@@ -275,35 +214,10 @@
       <h6>Get in Touch</h6>
     </div>
     <div class="row">
-      <div class="col-lg-6 container-fulid">
+      <div class="col-lg-12 container-fulid">
         <div class="address_mail_footer_grids">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22403.466742725344!2d106.32334459371383!3d-6.9607699944372134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e428fecd3666f83%3A0x6f9b87d2e5acbaea!2sGoa%20Lauk!5e0!3m2!1sen!2sid!4v1594735232837!5m2!1sen!2sid"></iframe>
         </div>
-      </div>
-      <div class="col-lg-6 contact-form">
-        <form action="#" method="post">
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 form-group contact-forms">
-              <input type="text" class="form-control" placeholder="First Name" required="">
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 form-group contact-forms">
-              <input type="text" class="form-control" placeholder="Last Name" required="">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 form-group contact-forms">
-              <input type="text" class="form-control" placeholder="Phone" required="">
-
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 form-group contact-forms">
-              <input type="email" class="form-control" placeholder="Email" required="">
-            </div>
-          </div>
-          <div class="form-group contact-forms">
-            <textarea class="form-control" placeholder="Meassage" required=""></textarea>
-          </div>
-          <button type="submit" class="btn sent-butnn btn-lg">Send</button>
-        </form>
       </div>
     </div>
   </div>

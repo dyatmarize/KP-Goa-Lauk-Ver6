@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+Route::get('/', 'HomeController@index');
 
 Route::get('/login', function () {
     return view('login');
@@ -39,7 +40,7 @@ Route::get('/about', function () {
 Route::get('/gallery', 'GalleryController@index');
 Route::get('/uploadgallery', function () {
     return view('uploadgallery');
-});
+})->middleware('auth');
 Route::post('/uploadgallery', 'GalleryController@store')->middleware('auth');
 
 
