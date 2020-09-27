@@ -3,6 +3,14 @@
 @section('title', 'Your Article')
 
 @section('content')
+
+<style>
+p.ex3 {
+  height: 200px;
+  overflow: auto;
+}
+</style>
+
 <section class="service py-lg-4 py-md-4 py-sm-3 py-3" id="service">
   <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
     <h3 class="title text-center mb-2">Services</h3>
@@ -17,10 +25,13 @@
             <h4>
               {{ $a->judul }}
             </h4>
-            <p class="mt-2">{{$a->deskripsi}}</p>
-            <h1 class="mt-2">{{$a->users->name}}</h1>
+            <p class="mt-2 ex3">{{$a->deskripsi}}</p>
           </div>
           <a href="artikeluser/{{ $a->id }}/editartikel" class="btn btn-primary btn-sm">Edit</a>
+          <form action="artikeluser/{{ $a->id }}" method="post" class="d-inline" >
+          @method('delete')
+          @csrf
+          <button type="submit" class="btn btn-danger btn-sm">Delete</button>
         </div>
       </div>
       @endforeach

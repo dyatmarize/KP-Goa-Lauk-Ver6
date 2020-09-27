@@ -42,7 +42,8 @@ Route::get('/uploadgallery', function () {
     return view('uploadgallery');
 })->middleware('auth');
 Route::post('/uploadgallery', 'GalleryController@store')->middleware('auth');
-
+Route::get('/galleryuser', 'GalleryController@untukuser');
+Route::delete('/galleryuser/{gallerys}','GalleryController@destroy');
 
 Route::get('/artikel', 'ArticleController@index');
 Route::get('/tambahartikel', function () {
@@ -52,6 +53,7 @@ Route::post('/tambahartikel', 'ArticleController@store')->middleware('auth');
 Route::get('/artikeluser', 'ArticleController@untukuser');
 Route::patch('/artikeluser/{artikel}', 'ArticleController@update');
 Route::get('/artikeluser/{artikel}/editartikel', 'ArticleController@edit');
+Route::delete('/artikeluser/{artikel}','ArticleController@destroy');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

@@ -16,6 +16,14 @@
 @endsection
 
 @section('content')
+
+<style>
+p.ex3 {
+  height: 200px;
+  overflow: auto;
+}
+</style>
+
 <section class="service py-lg-4 py-md-4 py-sm-3 py-3" id="service">
   <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
 
@@ -34,8 +42,8 @@
             <h4>
               {{ $a->judul }}
             </h4>
-            <p class="mt-2">{{$a->deskripsi}}</p>
-            <h1 class="mt-2">{{$a->nama}}</h1>
+            <p class="mt-2 ex3">{{$a->deskripsi}}</p>
+            <h6 class="mt-2 float-right">Created by : {{$a->nama}}</h6>
           </div>
         </div>
       </div>

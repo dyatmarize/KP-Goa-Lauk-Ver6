@@ -23,18 +23,27 @@
   <hr class="mt-2 mb-2">
 
   <a href="/uploadgallery" class="btn btn-dark mb-2">Upload</a>
-  <a href="/galleryuser">liat</a>
 
   <div class="row text-center text-lg-left">
 
     @foreach($gallerys as $g)
     <div class="col-lg-3 col-md-4 col-6">
+    <div>
       <a class="d-block mb-4 h-100">
         <img class="img-fluid img-thumbnail" src="{{asset('storage/images/'.$g->file)}}" alt="">
       </a>
+      <form action="galleryuser/{{ $g->id }}" method="post" class="d-inline" >
+    @method('delete')
+    @csrf
+    <button type="submit" class="btn btn-danger btn-sm float-right">Delete</button>
+    </div>
     </div>
     @endforeach
+    
   </div>
 
 </div>
+
+
+
 @endsection

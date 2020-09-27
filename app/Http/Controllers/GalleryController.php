@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Gallery;
 use Illuminate\Http\Request;
+use Auth;
+Use App\Article;
+Use App\User;
+use DB;
 
 class GalleryController extends Controller
 {
@@ -18,6 +22,12 @@ class GalleryController extends Controller
         $gallerys = Gallery::all();
 
         return view('gallery')->with(compact('gallerys'));
+    }
+
+    public function untukuser()
+    {
+        $gallerys = Auth::user()->gallery()->get();
+    	return view('galleryuser')->with(compact('gallerys'));
     }
 
     /**
@@ -47,7 +57,9 @@ class GalleryController extends Controller
             'file' => $filename,
         ]);
 
-        return view('/uploadgallery');
+        $gallerys = Gallery::paginate(50);
+
+        return view('/gallery')->with(compact('gallerys'));
     }
 
     /**
@@ -90,8 +102,9 @@ class GalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Gallery $gallerys)
     {
-        //
+        Gallery::destroy($gallerys->id); 
+		return redirect('/galleryuser');
     }
 }

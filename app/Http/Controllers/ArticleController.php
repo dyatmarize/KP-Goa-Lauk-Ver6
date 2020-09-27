@@ -23,7 +23,7 @@ class ArticleController extends Controller
 
     public function untukuser()
     {
-        $artikel = Auth::user()->artikel()->all();
+        $artikel = Auth::user()->artikel()->get();
     	return view('artikeluser')->with(compact('artikel'));
     }
 
@@ -53,7 +53,7 @@ class ArticleController extends Controller
             'deskripsi' => $request->deskripsi,
         ]);
 
-        $artikel = Article::paginate(10);
+        $artikel = Article::paginate(50);
 
         return view('/artikel')->with(compact('artikel'));
     }
@@ -118,8 +118,9 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Article $artikel)
     {
-        //
+        Article::destroy($artikel->id); 
+		return redirect('/artikeluser');
     }
 }
