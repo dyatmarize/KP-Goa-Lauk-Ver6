@@ -36,6 +36,7 @@ p.ex3 {
       </div>
       @endforeach
     </div>
+    {{ $artikel->links() }}
   </div>
 </section>
 <!--//about -->

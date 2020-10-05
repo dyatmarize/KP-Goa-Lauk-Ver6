@@ -35,6 +35,6 @@
     </div>
     @endforeach
   </div>
-
+  {{$gallerys->links()}}
 </div>
 @endsection

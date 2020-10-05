@@ -19,14 +19,14 @@ class GalleryController extends Controller
     public function index()
     {
         //
-        $gallerys = Gallery::all();
+        $gallerys = Gallery::paginate(30);
 
         return view('gallery')->with(compact('gallerys'));
     }
 
     public function untukuser()
     {
-        $gallerys = Auth::user()->gallery()->get();
+        $gallerys = Auth::user()->gallery()->paginate(30);
     	return view('galleryuser')->with(compact('gallerys'));
     }
 

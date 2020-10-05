@@ -17,13 +17,13 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $artikel = Article::all();
+        $artikel = Article::paginate(30);
     	return view('artikel')->with(compact('artikel'));
     }
 
     public function untukuser()
     {
-        $artikel = Auth::user()->artikel()->get();
+        $artikel = Auth::user()->artikel()->paginate(30);
     	return view('artikeluser')->with(compact('artikel'));
     }
 
