@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+Use App\About;
+Use App\User;
+use DB;
 
 class AboutController extends Controller
 {
