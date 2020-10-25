@@ -28,6 +28,14 @@ Route::get('/profile', function () {
     return view('profile');
 })->middleware('auth');
 
+
+
+// Route::get('/changePassword','PasswordController@showChangePasswordForm')->name('changePassword')->middleware('auth');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/changePassword', 'PasswordController@showChangePasswordForm')->name('changePassword');
+    Route::patch('/changePassword', 'PasswordController@update')->name('changePassword.update');
+});
+
 Route::get('/profile/{user}/editprofile', 'UserController@edit');
 Route::patch('/profile/{user}', 'UserController@update');
 
