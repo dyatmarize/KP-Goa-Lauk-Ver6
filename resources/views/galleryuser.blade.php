@@ -30,7 +30,7 @@
     <div class="col-lg-3 col-md-4 col-6">
     <div>
       <a class="d-block mb-4 h-100">
-        <img class="img-fluid img-thumbnail" src="{{asset('storage/images/'.$g->file)}}" alt="">
+        <img class="img-fluid img-thumbnail" src="{{asset('storage/'.$g->file)}}" alt="">
       </a>
       <form action="galleryuser/{{ $g->id }}" method="post" class="d-inline" >
     @method('delete')

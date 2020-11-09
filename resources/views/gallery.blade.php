@@ -30,7 +30,7 @@
     @foreach($gallerys as $g)
     <div class="col-lg-3 col-md-4 col-6">
       <a class="d-block mb-4 h-100">
-        <img class="img-fluid img-thumbnail" src="{{asset('storage/images/'.$g->file)}}" alt="">
+        <img class="img-fluid img-thumbnail" src="{{asset('storage/'.$g->file)}}" alt="">
       </a>
     </div>
     @endforeach

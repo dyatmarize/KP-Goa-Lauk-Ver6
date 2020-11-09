@@ -49,8 +49,8 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         //
-        $filename = uniqid() . '.' . $request->gambar->getClientOriginalExtension();
-        $request->gambar->move(storage_path('app\public\images'), $filename);
+        $filename = 'gallerys\\' . uniqid() . '.' . $request->gambar->getClientOriginalExtension();
+        $request->gambar->move(storage_path('app\public\gallerys'), $filename);
 
         Gallery::create([
             'id_user' => auth()->user()->id,
