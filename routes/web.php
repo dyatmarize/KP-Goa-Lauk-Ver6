@@ -28,7 +28,9 @@ Route::get('/profile', function () {
     return view('profile');
 })->middleware('auth');
 
-
+Route::get('/editprofile', function () {
+    return view('editprofile');
+})->middleware('auth');
 
 // Route::get('/changePassword','PasswordController@showChangePasswordForm')->name('changePassword')->middleware('auth');
 Route::group(['middleware' => 'auth'], function () {
@@ -51,7 +53,7 @@ Route::get('/uploadgallery', function () {
 })->middleware('auth');
 Route::post('/uploadgallery', 'GalleryController@store')->middleware('auth');
 Route::get('/galleryuser', 'GalleryController@untukuser');
-Route::delete('/galleryuser/{gallerys}','GalleryController@destroy');
+Route::delete('/galleryuser/{gallerys}', 'GalleryController@destroy');
 
 Route::get('/artikel', 'ArticleController@index');
 Route::get('/tambahartikel', function () {
@@ -61,7 +63,7 @@ Route::post('/tambahartikel', 'ArticleController@store')->middleware('auth');
 Route::get('/artikeluser', 'ArticleController@untukuser');
 Route::patch('/artikeluser/{artikel}', 'ArticleController@update');
 Route::get('/artikeluser/{artikel}/editartikel', 'ArticleController@edit');
-Route::delete('/artikeluser/{artikel}','ArticleController@destroy');
+Route::delete('/artikeluser/{artikel}', 'ArticleController@destroy');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
