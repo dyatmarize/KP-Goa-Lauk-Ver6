@@ -31,7 +31,7 @@
             </tr>
             <tr>
                 <td><a href="/editprofile" class="btn btn-primary">Edit Profile</a></td>
-                <td></td>
+                <td><a href="/changePassword" class="btn btn-primary">Ganti Password</a></td>
             </tr>
         </table>
 
