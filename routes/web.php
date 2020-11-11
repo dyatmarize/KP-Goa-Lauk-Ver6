@@ -39,7 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('/profile/{user}/editprofile', 'UserController@edit');
-Route::patch('/profile/{user}', 'UserController@update');
+Route::patch('/editprofile', 'UserController@update');
 
 Route::get('/about', function () {
     return view('about');

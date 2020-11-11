@@ -18,7 +18,9 @@
 @section('content')
 
 <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
-    <form action="#" method="POST">
+    <form action="/editprofile" method="POST">
+        @csrf
+        @method('patch')
         <div class="form-group">
             <label class="col-md-4 control-label" for="name">Name</label>
             <div class="col-md-4">
