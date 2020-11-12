@@ -28,11 +28,15 @@ p.ex3 {
   <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
 
     <h3 class="title text-center mb-2">Services</h3>
+    @if(auth()->user())
     <div class="title-w3ls-text text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">
       <h6>Artikel anda nih</h6>
       <a href="{{ url('/tambahartikel') }}">tambah</a>
       <a href="{{ url('/artikeluser') }}">liat</a>
     </div>
+    @else
+    
+    @endif
     <div class="row">
       @foreach($artikel as $a)
       <div class="col-lg-4 col-md-6 col-sm-6 ser-icon my-3">

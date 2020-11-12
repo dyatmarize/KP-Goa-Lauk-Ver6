@@ -37,10 +37,10 @@ p.ex3 {
       @foreach($about as $ab)
       <div class="col-lg-6 col-md-6 col-sm-6 left-abut-txt my-3">
         <h3 class="title mb-2">About Us</h3>
-        <div class="title-w3ls-text mb-lg-4 mb-md-4 mb-sm-3 mb-3">
+        <!-- <div class="title-w3ls-text mb-lg-4 mb-md-4 mb-sm-3 mb-3">
           <h6>{{$ab->judul}}
           </h6>
-        </div>
+        </div> -->
         <div class="about-right-grid">
           <p>{{$ab->deskripsi}}</p>
         </div>
@@ -114,7 +114,7 @@ p.ex3 {
           <span class="fa fa-star" aria-hidden="true"></span>
           <div class="ser-text-wthree mt-3">
             <h4>
-              Value
+              Daya Tarik
             </h4>
             <p class="mt-2">Selain keindahan ornamen-ornamennya, Goa Lauk juga memiliki keragaman biota goa.
               Ada beberapa jenis biota/fauna yang terdapat di Goa Lauk, sepeti jenis-jenis anthropoda (serangga atau jangkrik gua) dan udang-udangan (crustacea).
@@ -128,7 +128,7 @@ p.ex3 {
           <span class="fa fa-globe" aria-hidden="true"></span>
           <div class="ser-text-wthree mt-3">
             <h4>
-              Passionate Travel
+              Lokasi
             </h4>
             <p class="mt-2">Untuk mencapai Goa Lauk dari Pantai Sawarna, hanya membutuhkan waktu
               ± 30 menit dengan menggunakan kendaraan roda empat ataupun roda dua, sedangkan
@@ -141,7 +141,7 @@ p.ex3 {
           <span class="fa fa-map" aria-hidden="true"></span>
           <div class="ser-text-wthree mt-3">
             <h4>
-              Diverse Destinations
+              Desa Sawarna
             </h4>
             <p class="mt-2">Selain terkenal karena keindahan pantai-pantainya, Desa Sawarna yang terletak di
               Kecamatan Bayah sebelah barat Pelabuhan Ratu, Kabupaten Lebak, Banten ini terkenal pula karena goa-goanya.

@@ -21,12 +21,30 @@
   <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Thumbnail Gallery</h1>
 
   <hr class="mt-2 mb-2">
-
-  <a href="/uploadgallery" class="btn btn-dark mb-2">Upload</a>
-  <a href="/galleryuser">liat</a>
-
+  @if(auth()->user())
+    <a href="/uploadgallery" class="btn btn-dark mb-2">Upload</a>
+    <a href="/galleryuser">liat</a>
+  @else
+  @endif
   <div class="row text-center text-lg-left">
-
+  <div class="col-lg-3 col-md-6 col-sm-6 gallery-img-grid ">
+        <img src="images/1.jpeg" alt="news image" class="img-fluid">
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 gallery-img-grid ">
+        <img src="images/12.jpeg" alt="news image" class="img-fluid">
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 gallery-img-grid ">
+        <img src="images/4.jpeg" alt="news image" class="img-fluid">
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 gallery-img-grid ">
+        <img src="images/15.jpeg" alt="news image" class="img-fluid">
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 gallery-img-grid ">
+        <img src="images/6.jpeg" alt="news image" class="img-fluid">
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 gallery-img-grid ">
+        <img src="images/8.jpeg" alt="news image" class="img-fluid">
+      </div>
     @foreach($gallerys as $g)
     <div class="col-lg-3 col-md-4 col-6">
       <a class="d-block mb-4 h-100">

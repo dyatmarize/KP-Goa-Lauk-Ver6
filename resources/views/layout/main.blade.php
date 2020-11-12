@@ -111,12 +111,12 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
         </p>
         <p class="pt-2">
           <span> Phone</span> : +(000) 123 4565 32</p>
-        <p class="pt-2">
+        <!-- <p class="pt-2">
           <span>Email</span> :
           <a href="mailto:info@example.com">info@example1.com</a>
-        </p>
+        </p> -->
       </div>
-      <div class="social-icons text-center mt-md-4 mt-3">
+      <!-- <div class="social-icons text-center mt-md-4 mt-3">
         <ul>
           <li class="facebook">
             <a href="#">
@@ -134,7 +134,7 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
             </a>
           </li>
         </ul>
-      </div>
+      </div> -->
       <!-- move icon -->
       <div class="text-center mt-lg-5 mt-md-4 mt-3">
         <a href="#home" class="move-top text-center mt-3">
