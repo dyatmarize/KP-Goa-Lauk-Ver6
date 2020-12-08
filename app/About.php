@@ -9,6 +9,6 @@ class About extends Model
     protected $table = 'abouts'; 
 
     protected $fillable = [
-        'judul', 'deskripsi',
+        'deskripsi',
     ];
 }
