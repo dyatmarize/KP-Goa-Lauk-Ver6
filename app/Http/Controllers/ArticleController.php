@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 Use App\Article;
+Use App\Contact;
 Use App\User;
 use DB;
 
@@ -18,13 +19,15 @@ class ArticleController extends Controller
     public function index()
     {
         $artikel = Article::paginate(30);
-    	return view('artikel')->with(compact('artikel'));
+        $contact = Contact::paginate(1);
+    	return view('artikel')->with(compact('artikel', 'contact'));
     }
 
     public function untukuser()
     {
         $artikel = Auth::user()->artikel()->paginate(30);
-    	return view('artikeluser')->with(compact('artikel'));
+        $contact = Contact::paginate(1);
+    	return view('artikeluser')->with(compact('artikel','contact'));
     }
 
     /**
@@ -34,7 +37,8 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //$
+        $contact = Contact::paginate(1);
+        return view('tambahartikel')->with(compact('contact'));
     }
 
     /**
@@ -54,8 +58,9 @@ class ArticleController extends Controller
         ]);
 
         $artikel = Article::paginate(50);
+        $contact = Contact::paginate(1);
 
-        return view('/artikel')->with(compact('artikel'));
+        return view('/artikel')->with(compact('artikel','contact'));
     }
 
     /**
@@ -77,7 +82,8 @@ class ArticleController extends Controller
      */
     public function edit(Article $artikel)
     {
-        return view('editartikel',compact('artikel'));
+        $contact = Contact::paginate(1);
+        return view('editartikel',compact('artikel','contact'));
     }
 
     /**
@@ -108,8 +114,8 @@ class ArticleController extends Controller
 		// $tujuan_upload = 'berita';
 		// $file->move($tujuan_upload,$nama_file);
 		Article::whereId($artikel->id)->update($form_data);
-
-		return redirect('/artikeluser') ->with('status', 'Artikel berhasil diedit');
+        $contact = Contact::paginate(1);
+		return redirect('/artikeluser',compact('contact')) ->with('status', 'Artikel berhasil diedit');
     }
 
     /**

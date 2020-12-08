@@ -6,6 +6,7 @@ use App\Gallery;
 use Illuminate\Http\Request;
 use Auth;
 Use App\Article;
+Use App\Contact;
 Use App\User;
 use DB;
 
@@ -20,14 +21,15 @@ class GalleryController extends Controller
     {
         //
         $gallerys = Gallery::paginate(30);
-
-        return view('gallery')->with(compact('gallerys'));
+        $contact = Contact::paginate(1);
+        return view('gallery')->with(compact('gallerys', 'contact'));
     }
 
     public function untukuser()
     {
         $gallerys = Auth::user()->gallery()->paginate(30);
-    	return view('galleryuser')->with(compact('gallerys'));
+        $contact = Contact::paginate(1);
+    	return view('galleryuser')->with(compact('gallerys','contact'));
     }
 
     /**
@@ -37,7 +39,8 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        //
+        $contact = Contact::paginate(1);
+        return view('uploadgallery')->with(compact('contact'));
     }
 
     /**
@@ -58,8 +61,8 @@ class GalleryController extends Controller
         ]);
 
         $gallerys = Gallery::paginate(50);
-
-        return view('/gallery')->with(compact('gallerys'));
+        $contact = Contact::paginate(1);
+        return view('/gallery')->with(compact('gallerys','contact'));
     }
 
     /**

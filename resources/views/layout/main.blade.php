@@ -109,8 +109,10 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
           <span>Address</span> : Desa Lebak Tipar, Kecamatan Cilograng,
           <br>Kabupaten Lebak, Provinsi Banten
         </p>
+        @foreach($contact as $a)
         <p class="pt-2">
-          <span> Phone</span> : +(000) 123 4565 32</p>
+          <span> Phone</span> : {{ $a->nohp }}</p>
+        @endforeach
         <!-- <p class="pt-2">
           <span>Email</span> :
           <a href="mailto:info@example.com">info@example1.com</a>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 Use App\About;
+Use App\Contact;
 Use App\User;
 use DB;
 
@@ -17,7 +18,9 @@ class AboutController extends Controller
      */
     public function index()
     {
-        //
+        $contact = Contact::paginate(1);
+        $about = About::paginate(1);
+        return view('about')->with(compact('contact', 'about'));
     }
 
     /**

@@ -4,17 +4,32 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Contact;
 use Auth;
 use Hash;
 use Validator;
 
 class PasswordController extends Controller
 {
+
+    public function index()
+    {
+        //
+        $contact = Contact::paginate(1);
+        return view('profile')->with(compact('contact'));
+    }
+
+    public function edit()
+    {
+        $contact = Contact::paginate(1);
+        return view('editprofile',compact('contact'));
+    }
     /**
      * @return mixed
      */
     public function showChangePasswordForm(){
-        return view('auth.changepassword');
+        $contact = Contact::paginate(1);
+        return view('auth.changepassword', compact('contact'));
     }
  
     /**
@@ -52,7 +67,7 @@ class PasswordController extends Controller
  
         $user->password = bcrypt(request('password'));
         $user->save();
- 
-        return view('auth.changepassword')->withSuccess('Password has been updated.');
+        $contact = Contact::paginate(1);
+        return view('auth.changepassword', compact('contact'))->withSuccess('Password has been updated.');
     }
 }

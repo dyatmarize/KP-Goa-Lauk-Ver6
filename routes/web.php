@@ -24,13 +24,9 @@ Route::get('/register', function () {
     return view('register');
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-})->middleware('auth');
+Route::get('/profile', 'PasswordController@index')->middleware('auth');
 
-Route::get('/editprofile', function () {
-    return view('editprofile');
-})->middleware('auth');
+Route::get('/editprofile', 'PasswordController@edit')->middleware('auth');
 
 // Route::get('/changePassword','PasswordController@showChangePasswordForm')->name('changePassword')->middleware('auth');
 Route::group(['middleware' => 'auth'], function () {
@@ -41,24 +37,18 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('/profile/{user}/editprofile', 'UserController@edit');
 Route::patch('/editprofile', 'UserController@update');
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', 'AboutController@index');
 
 
 //Gallery
 Route::get('/gallery', 'GalleryController@index');
-Route::get('/uploadgallery', function () {
-    return view('uploadgallery');
-})->middleware('auth');
+Route::get('/uploadgallery', 'GalleryController@create')->middleware('auth');
 Route::post('/uploadgallery', 'GalleryController@store')->middleware('auth');
 Route::get('/galleryuser', 'GalleryController@untukuser');
 Route::delete('/galleryuser/{gallerys}', 'GalleryController@destroy');
 
 Route::get('/artikel', 'ArticleController@index');
-Route::get('/tambahartikel', function () {
-    return view('tambahartikel');
-})->middleware('auth');
+Route::get('/tambahartikel', 'ArticleController@create')->middleware('auth');
 Route::post('/tambahartikel', 'ArticleController@store')->middleware('auth');
 Route::get('/artikeluser', 'ArticleController@untukuser');
 Route::patch('/artikeluser/{artikel}', 'ArticleController@update');

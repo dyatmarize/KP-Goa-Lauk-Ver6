@@ -29,9 +29,11 @@
           <h6>Some Words About Us
           </h6>
         </div>
+        @foreach($about as $ab)
         <div class="about-right-grid">
-          <p>Goa Lauk kaya akan ornamen. Menurut cerita penduduk, dahulunya di goa ini terdapat banyak ikan, sehingga masyarakat menyebutnya goa ini dengan Goa Lauk.</p>
+          <p>{{$ab->deskripsi}}</p>
         </div>
+        @endforeach
       </div>
       <div class="col-lg-3 col-sm-6 abut-img-two my-3">
         <img src="images/goa.jpg" alt="" class="img-fluid float-right">

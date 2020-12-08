@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 Use App\Article;
 Use App\User;
+Use App\Contact;
 use DB;
 Use App\About;
 
@@ -30,6 +31,7 @@ class HomeController extends Controller
     {
         $artikel = Article::paginate(3);
         $about = About::paginate(1);
-        return view('home')->with(compact('artikel', 'about'));
+        $contact = Contact::paginate(1);
+        return view('home')->with(compact('artikel', 'about', 'contact'));
     }
 }
